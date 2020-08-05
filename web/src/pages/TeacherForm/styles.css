@@ -2,3 +2,202 @@
   width: 100vw;
   height: 100vh;
 }
+
+#page-teacher-form .page-header .header-content {
+  margin-bottom: 6.4rem;
+}
+
+#page-teacher-form main {
+  background: var(--color-box-base);
+  width: 100%;
+  max-width: 74rem;
+  border-radius: 0.8rem;
+  margin: -3.2rem auto 3.2rem;
+  padding-top: 6.4rem;
+  overflow: hidden;
+}
+
+#page-teacher-form .schedule-item {
+  margin: 2.4rem 0;
+}
+
+#page-teacher-form .schedule-item+.schedule-item {
+  border-top: 1px solid var(--color-line-in-white);
+  padding-top: 2.4rem
+}
+
+#page-teacher-form main fieldset {
+  border: 0;
+  padding: 0 2.4rem;
+}
+
+#page-teacher-form main fieldset+fieldset {
+  margin-top: 2.4rem;
+}
+
+#page-teacher-form main fieldset legend {
+  font: 700 2.4rem 'Archivo';
+  color: var(--color-text-title);
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--color-line-in-white);
+}
+
+#page-teacher-form main fieldset .input-block+.textarea-block, #page-teacher-form main fieldset .select-block+.input-block {
+  margin-top: 2.4rem;
+}
+
+#page-teacher-form main label {
+  color: var(--color-text-complement)
+}
+
+#page-teacher-form main .schedule-item .removeSchedule {
+  border: 0;
+  background: var(--color-error);
+  color: var(--color-button-text);
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 0.8rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-teacher-form main .schedule-item .removeSchedule span {
+  margin-right: .5rem;
+}
+
+#page-teacher-form main .schedule-item .removeSchedule img {
+  max-width: 2rem;
+}
+
+#page-teacher-form main .schedule-item .removeSchedule:hover {
+  background: var(--color-error-dark);
+  transition: .2s all;
+}
+
+#page-teacher-form main footer {
+  padding: 4rem 2.4rem;
+  background: var(--color-box-footer);
+  border-top: 1px solid var(--color-line-in-white);
+  margin-top: 6.4rem;
+}
+
+#page-teacher-form main footer p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: var(--color-text-complement)
+}
+
+#page-teacher-form main footer p img {
+  margin-right: 2rem;
+}
+
+#page-teacher-form main footer button {
+  width: 100%;
+  height: 5.6rem;
+  background: var(--color-secondary);
+  color: var(--color-button-text);
+  border: 0;
+  border-radius: 0.8rem;
+  font: 700 1.6rem 'Archivo';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: .2s all;
+  margin-top: 3.2rem;
+}
+
+#page-teacher-form main footer button:hover {
+  background: var(--color-secondary-dark);
+}
+
+#page-teacher-form .fieldset-schedule legend button {
+  margin-top: 0.6rem;
+  background: none;
+  border: 0;
+  color: var(--color-primary);
+  cursor: pointer;
+  font: 700 1.6rem 'Archivo';
+  transition: .2s all;
+}
+
+#page-teacher-form .fieldset-schedule legend button:hover {
+  color: var(--color-primary-dark)
+}
+
+/* Chrome fix */
+
+@supports (-webkit-appearance:none) and (not (overflow:-webkit-marquee)) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
+  #page-teacher-form .fieldset-schedule legend button {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  #page-teacher-form {
+    max-width: 100vw;
+  }
+  #page-teacher-form .page-header .header-content {
+    margin-bottom: 0;
+  }
+  #page-teacher-form main fieldset {
+    padding: 0 6.4rem;
+  }
+  #page-teacher-form main .schedule-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 1.6rem;
+    position: relative;
+  }
+  #page-teacher-form main .schedule-item .input-block {
+    margin-top: 0 !important;
+  }
+  #page-teacher-form main .schedule-item .removeSchedule .hide-md {
+    display: none;
+  }
+
+  #page-teacher-form main .schedule-item .removeSchedule {
+    position: absolute;
+    width: auto;
+    bottom: 0;
+    right: 0;
+    transition: .4s all;
+    height: 5.6rem;
+    padding: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  #page-teacher-form main .schedule-item:hover .removeSchedule {
+    right: -4.4rem;
+    transition: .4s all;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  #page-teacher-form main footer {
+    padding: 4rem 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #page-teacher-form main footer p {
+    justify-content: space-between;
+  }
+  #page-teacher-form main footer button {
+    width: 20rem;
+    margin-top: 0;
+    cursor: pointer;
+  }
+}

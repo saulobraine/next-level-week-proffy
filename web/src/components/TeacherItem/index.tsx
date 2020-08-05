@@ -3,28 +3,49 @@ import React from 'react';
 import './styles.css';
 
 import wppIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
 
-const TeacherItem: React.FC = () => {
+export interface Teacher {
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  subject: string;
+  whatsapp: string;
+}
+
+interface TeacherItemProps {
+  teacher: Teacher
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+
+  const createNewConnection = () => {
+    api.post('connections', {
+      user_id: teacher.id
+    })
+  }
+
   return <>
     <article className="teacher-item">
       <header>
-        <img src="https://api.adorable.io/avatars/200/abott@adorable.png" alt="Avatar Aleatório" />
+        <img src={teacher.avatar} alt={teacher.name} />
         <div>
-          <strong>Saulo Braine</strong>
-          <span>Desenvolvedor Web</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
 
-      <p>
-        Bacon ipsum dolor amet meatball pork loin chislic landjaeger, doner short ribs ham porchetta turducken boudin. Buffalo swine chislic sausage turkey ham hock.
-          </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
           Preço/hora
-              <strong>R$ 90,00</strong>
+              <strong>{teacher.cost}</strong>
         </p>
-        <button type="button"><img src={wppIcon} alt="Whatsapp" /> Entrar em contato</button>
+        
+        <a href={`https://wa.me/${teacher.whatsapp}`} target="_blank" rel="noopener noreferrer" onClick={createNewConnection} ><img src={wppIcon} alt="Whatsapp"/> Entrar em contato</a>
       </footer>
     </article>
   </>;

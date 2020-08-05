@@ -1,0 +1,48 @@
+.textarea-block {
+  position: relative;
+}
+
+.textarea-block+.textarea-block {
+  margin-top: 1.4rem;
+}
+
+.textarea-block label {
+  font-size: 1.4rem;
+}
+
+.textarea-block textarea {
+  width: 100%;
+  height: 16rem;
+  min-height: 8rem;
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  background: var(--color-input-background);
+  border: 1px solid var(--color-line-in-primary);
+  outline: 0;
+  padding: 1.2rem 1.6rem;
+  resize: vertical;
+}
+
+.textarea-block::after {
+  width: calc(100% - 3.2rem);
+  height: 0px;
+  content: "";
+  background: var(--color-primary-light);
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: 0;
+  transition: .2s all;
+}
+
+/* Chrome fix */
+@supports (-webkit-appearance:none) and (not (overflow:-webkit-marquee)) and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none)) {
+  .textarea-block::after {
+    bottom: 0.8rem;
+  }
+}
+
+.textarea-block:focus-within::after {
+  height: 3px;
+  transition: .2s all;
+}

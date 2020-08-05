@@ -62,7 +62,7 @@
 }
 
 .buttons-container a.give-classes {
-  background: var(--color-secundary);
+  background: var(--color-secondary);
 }
 
 .buttons-container a.study:hover {
@@ -71,7 +71,7 @@
 }
 
 .buttons-container a.give-classes:hover {
-  background: var(--color-secundary-dark);
+  background: var(--color-secondary-dark);
   transition: .2s all;
 }
 
@@ -80,6 +80,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.total-connections span {
+  margin: 0 .25rem
 }
 
 .total-connections img {
