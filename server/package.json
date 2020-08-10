@@ -10,15 +10,19 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "build": "tsc",
     "start": "node build/src/server.js",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback",
+    "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "dev knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "dev knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.2",
-    "sqlite3": "^5.0.0"
+    "pg": "^8.3.0"
   }
 }
