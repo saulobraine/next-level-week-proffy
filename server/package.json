@@ -12,8 +12,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node build/src/server.js",
-    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback",
+    "knex:migrate": "knex --knexfile knexfile.js migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile knexfile.js migrate:rollback",
     "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "dev knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
     "dev knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
