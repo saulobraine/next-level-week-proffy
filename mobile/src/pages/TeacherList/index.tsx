@@ -118,16 +118,28 @@ const TeacherList: React.FC = () => {
                   <Feather name="chevron-down" style={styles.pickerIcon} />
                 </View>
               </View>
-
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>Horário</Text>
-                <TextInput
-                  style={styles.input}
-                  value={time}
-                  onChangeText={text => setTime(text)}
-                  placeholder="Horário"
-                  placeholderTextColor="#c1bccc"
-                />
+                <View style={styles.pickerContainer}>
+                  <Picker
+                    selectedValue={time}
+                    style={styles.pickerInput}
+                    onValueChange={itemValue => setTime(itemValue)}
+                    itemStyle={styles.pickerItemStyle} >
+                    <Picker.Item label="08:00" color='#8257e5' value="08:00" />
+                    <Picker.Item label="09:00" color='#8257e5' value="09:00" />
+                    <Picker.Item label="10:00" color='#8257e5' value="10:00" />
+                    <Picker.Item label="11:00" color='#8257e5' value="11:00" />
+                    <Picker.Item label="12:00" color='#8257e5' value="12:00" />
+                    <Picker.Item label="13:00" color='#8257e5' value="13:00" />
+                    <Picker.Item label="14:00" color='#8257e5' value="14:00" />
+                    <Picker.Item label="15:00" color='#8257e5' value="15:00" />
+                    <Picker.Item label="16:00" color='#8257e5' value="16:00" />
+                    <Picker.Item label="17:00" color='#8257e5' value="17:00" />
+                    <Picker.Item label="18:00" color='#8257e5' value="18:00" />
+                  </Picker>
+                  <Feather name="chevron-down" style={styles.pickerIcon} />
+                </View>
               </View>
             </View>
 
