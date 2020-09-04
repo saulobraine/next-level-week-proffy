@@ -1,0 +1,115 @@
+#page-register {
+  width: 100vw;
+  height: 100vh;
+}
+
+#page-register .logo {
+  color: var(--color-text-in-primary);
+  background-color: var(--color-primary);
+  background-position: center center;
+  background-size: calc(100% - 10rem);
+  background-repeat: no-repeat;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-register .logo-container {
+  max-width: 25rem;
+}
+
+#page-register .logo-container img {
+  max-width: 16rem;
+}
+
+#page-register .logo-container h2 {
+  font-weight: normal;
+}
+
+#page-register .register {
+  padding: 3rem 5rem;
+}
+
+#page-register .register .register-container h1 {
+  color: var(--color-text-title);
+  font-weight: 700;
+  font-size: 3.6rem;
+  line-height: 3rem;
+  margin: 3rem 0;
+}
+
+#page-register .register .register-container p {
+  max-width: 25rem;
+  margin-bottom: 3rem;
+}
+
+#page-register .register .register-container form button[type=submit] {
+  width: 100%;
+  height: 5.6rem;
+  margin-top: 4rem;
+  background: var(--color-secondary);
+  color: var(--color-button-text);
+  border: 0;
+  border-radius: 0.8rem;
+  font: 700 1.6rem 'Archivo';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: .2s all;
+  cursor: pointer;
+}
+
+#page-register .register .register-container form button[type=submit]:hover {
+  background: var(--color-secondary-dark);
+}
+
+#page-register .register .register-container form button[type=submit]:disabled, #page-register .register .register-container form button[type=submit]:disabled:hover {
+  background: var(--color-button-disabled);
+  color: var(--color-text-base);
+  cursor: not-allowed;
+}
+
+@media (min-width: 1100px) {
+  #page-register {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "register logo";
+  }
+  #page-register .logo {
+    color: var(--color-text-in-primary);
+    background-color: var(--color-primary);
+    background-origin: content-box;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: logo;
+  }
+  #page-register .logo-container, #page-register .logo-container img {
+    max-width: 30rem;
+  }
+  #page-register .register {
+    grid-area: register;
+    position: relative;
+    display: grid;
+    grid-template-rows: 15rem 1fr;
+    grid-template-areas: "back-login" "register-form";
+    padding: 5rem 10rem;
+  }
+  #page-register .register .back {
+    grid-area: back-login;
+  }
+  #page-register .register .register-container {
+    grid-area: register-form;
+    width: 50rem;
+    max-width: 100%;
+  }
+}
