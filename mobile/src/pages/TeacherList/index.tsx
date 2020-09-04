@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Picker } from 'react-native';
-import { ScrollView, TextInput, RectButton, BorderlessButton } from 'react-native-gesture-handler';
+import { ScrollView, RectButton, BorderlessButton } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import { Feather } from '@expo/vector-icons';
