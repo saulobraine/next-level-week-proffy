@@ -17,8 +17,8 @@
     "knex:migrate:rollback": "knex --knexfile build/knexfile.js migrate:rollback",
 
     "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "dev knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "dev knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+    "dev-knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "dev-knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
   },
   "dependencies": {
     "cors": "^2.8.5",
