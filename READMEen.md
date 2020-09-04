@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/18134442/90575050-e6169000-e190-11ea-868b-01132cbfb245.png" alt="Banner Proffy" />
+  <img src="https://user-images.githubusercontent.com/18134442/92285095-d8277580-eed9-11ea-9028-3bda70f8aa8f.png" alt="Banner Proffy" />
 </p>
 
 <p align="center">
