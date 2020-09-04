@@ -8,11 +8,13 @@
     <img src="https://img.shields.io/badge/Made%20by-Saulo%20Braine-important?color=%23118ee5&labelColor=%23454545&style=flat" alt="By Saulo Braine" /> 
   </a>
   <img src="https://img.shields.io/badge/license-MIT-brightgreen?color=%23118ee5&labelColor=%23454545&style=flat" alt="License" />
-  <img src="https://img.shields.io/badge/Project%20Lang-Portuguese%20🇧🇷-informational?color=%23118ee5&labelColor=%23454545&style=flat" alt="Project language" /> 
+  <a href="https://github.com/saulobraine/next-level-week-proffy/">
+    <img src="https://img.shields.io/badge/Project%20Lang-Portuguese%20🇧🇷-informational?color=%23118ee5&labelColor=%23454545&style=flat" alt="Project language" />
+  </a>   
   <a href="https://github.com/saulobraine/next-level-week-proffy/blob/master/READMEen.md" title="Switch readme language">
     <img src="https://img.shields.io/badge/English%20ReadMe-Yes-important?color=%23118ee5&labelColor=%23454545&style=flat" alt="Switch readme language" /> 
   </a>
- </p>
+</p>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/18134442/90575050-e6169000-e190-11ea-868b-01132cbfb245.png" alt="Banner Proffy" />
@@ -50,28 +52,28 @@
 
 ---
 
-## **Sobre o projeto**
+## **About the project**
 
-O projeto surgiu com a missão de trazer uma homenagem aos educadores do Brasil, através de uma plataforma que conecta alunos e professores.
+The project came about with the mission of bringing a tribute to educators in Brazil, through a platform that connects students and teachers.
 
-Feito na semana #nextlevelweek02 disponibilizada pela @rocketseat
+Made in the week #nextlevelweek02 available by @rocketseat
 
 ---
 
-## **Funcionalidades**
+## **Funcionalities**
 
-- [x] Professores podem se cadastrar na plataforma web através de um formulário:
-  - [x] Nome completo;
-  - [x] Link do avatar;
+- [x] Teachers can register on the web platform using a form:
+  - [x] Complete name;
+  - [x] Avatar's link;
   - [x] WhatsApp;
-  - [x] Breve descrição;
-  - [x] Matéria;
-  - [x] Custo da Hora/Aula;
-  - [x] Horários disponíveis.
+  - [x] Description;
+  - [x] Subject;
+  - [x] Cost by hour;
+  - [x] Available times.
 
-- [x] Alunos podem buscar professores e:
-  - [x] Filtrar por: matéria, dia da semana e horário;
-  - [x] Enviar mensagem via WhatsApp para o professor.
+- [x] Students can search for teachers and:
+  - [x] Filter by: subject, day of the week and time;
+  - [x] Send WhatsApp message to the teacher.
 
 ---
 
@@ -88,26 +90,26 @@ Feito na semana #nextlevelweek02 disponibilizada pela @rocketseat
   <img src="https://user-images.githubusercontent.com/18134442/90576752-6f2fc600-e195-11ea-9602-686bcc5877ff.gif" alt="Preview-Web">
 </p>
 
-#### 🎲 Executando o front-end
+#### 🎲 Running the front-end
 
 ```bash
 
-# Clone o repositório
+# Clone the repository
 $ git clone https://github.com/saulobraine/next-level-week-proffy.git
 
-# Acesse a pasta do projeto no prompt de comando
+# Access the project folder at the command prompt
 $ cd next-level-week-proffy
 
-# Acesse a pasta do front-end no prompt de comando
+# Access the front-end folder at the command prompt
 $ cd web
 
-# Instale as dependências
+# Install the dependencies
 $ yarn
 
-# Execute o script "dev"
+# Run the "dev" script
 $ yarn dev
 
-# O projeto iniciará na porta: 3000 - acesse http://localhost:3000 
+# The project will start at the door: 3000 - access http://localhost:3000 
 
 ```
 
@@ -133,65 +135,65 @@ $ yarn dev
 </p>
 
 
-#### 🎲 Executando o mobile
+#### 🎲 Running the mobile
 
 ```bash
-# Clone o repositório
+# Clone the repository
 $ git clone https://github.com/saulobraine/next-level-week-proffy.git
 
-# Acesse a pasta do projeto no prompt de comando
+# Access the project folder at the command prompt
 $ cd next-level-week-proffy
 
-# Acesse a pasta do front-end no prompt de comando
+# Access the mobile folder at the command prompt
 $ cd mobile
 
-# Instale as dependências
+# Install the dependencies
 $ yarn
 
-# Execute o script "dev"
+# Run the "dev" script
 $ yarn start
 
-# O EXPO iniciará na porta: 19002 - acesse http://localhost:19002, caso não abra automaticamente
+# EXPO will start at port: 19002 - go to http://localhost:19002, if it doesn't open automatically
 
-# Baixe e abra o cliente do Expo em seu celular via loja de apps
+# Download and open the Expo client on your phone via the app store
 
-# Aponte para o QRCODE e aguarde a instalação.
+# Point to the QRCODE and wait for the installation.
 ```
 
 ## API
 
-#### 🎲 Executando a API
+#### 🎲 Running the API
 
 ```bash
-# Clone o repositório
+# Clonethe repository
 $ git clone https://github.com/saulobraine/next-level-week-proffy.git
 
-# Acesse a pasta do projeto no prompt de comando
+# Access the project folder at the command prompt
 $ cd next-level-week-proffy
 
-# Acesse a pasta do front-end no prompt de comando
+# Access the server folder at the command prompt
 $ cd server
 
-# Instale as dependências
+# Install the dependencies
 $ yarn
 
-# Antes de criar a migrate do banco de dados, deverá ter em sua máquina o Docker com uma instância do PostGres, utilizando o arquivo .env.example (após preencher apenas .env) configure com as credênciais, após isso rode:
+# Before creating the database migrate, you must have Docker on your machine with a PostGres instance, using the .env.example file (after filling only .env) configure with the credentials, after that run:
 
 $ yarn dev knex:migrate
 
-# Execute o script "dev"
+# Run the "dev" script
 $ yarn dev
 
-# O backend iniciará na porta: 3333 - utilize a http://localhost:3333 no INSOMINIA, dentro da pasta SERVER existe um arquivo JSON com as configurações de rotas para o INSOMNIA. A API é necessária para o funcionamento correto da aplicação.
+# The backend will start at port: 3333 - use http://localhost:3333 in INSOMINIA, inside the SERVER folder there is a JSON file with the route settings for INSOMNIA. The API is necessary for the correct functioning of the application.
 ```
 
 ---
 
-## Agradecimentos
+## Acknowledgment
 
-Agradeço a @rocketseat pela oportunidade, que me fez abrir a mente para o Front-end, gostei muito dessa segunda experiência e irei continuar estudando React e ReactNative. Obrigado ♥
+I thank @rocketseat for the opportunity, which made me open my mind to the Front-end, I really enjoyed this second experience and I will continue studying React and ReactNative. Thank you ♥
 
 ---
 
-## Licença
-Este projeto esta sobe a licença <a href="https://github.com/saulobraine/next-level-week-proffy/blob/master/LICENSE" alt="License">GNU</a>
+## License
+This project is under license <a href="https://github.com/saulobraine/next-level-week-proffy/blob/master/LICENSE" alt="License">GNU</a>
