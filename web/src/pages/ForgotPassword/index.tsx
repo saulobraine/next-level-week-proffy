@@ -20,7 +20,7 @@ const ForgotPassword: React.FC = () => {
 
   const handleForgotPasswordSubmit = (e: FormEvent) => {
 
-    successRef.current?.classList.remove("success-oculto");
+    successRef.current?.classList.remove("success-hidden");
 
     e.preventDefault();
   };
@@ -44,7 +44,7 @@ const ForgotPassword: React.FC = () => {
       <div id="page-forgot-password">
 
         <div
-          className="success success-oculto"
+          className="success success-hidden"
           ref={successRef}
           style={{
             backgroundImage: `url(${successBackground})`,

@@ -179,7 +179,7 @@
     opacity: 1;
   }
 
-  #page-forgot-password .success-oculto {
+  #page-forgot-password .success-hidden {
     opacity: 0;
     visibility: hidden;
     z-index: -1;
