@@ -113,3 +113,9 @@
     max-width: 100%;
   }
 }
+
+@media (max-height: 800px) {
+  #page-register .register {
+    grid-template-rows: 5rem 1fr;
+  }
+}
