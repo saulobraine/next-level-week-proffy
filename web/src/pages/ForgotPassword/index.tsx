@@ -8,13 +8,20 @@ import background from '../../assets/images/login-background.svg';
 import purpleBackIcon from '../../assets/images/icons/back-purple.svg';
 import './styles.css';
 
+import successBackground from '../../assets/images/success-background.svg';
+import successIcon from '../../assets/images/icons/success.svg';
+
 const ForgotPassword: React.FC = () => {
 
   const [email, setEmail] = useState('');
 
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
 
   const handleForgotPasswordSubmit = (e: FormEvent) => {
+
+    successRef.current?.classList.remove("success-oculto");
+
     e.preventDefault();
   };
 
@@ -35,6 +42,23 @@ const ForgotPassword: React.FC = () => {
   return (
     <>
       <div id="page-forgot-password">
+
+        <div
+          className="success success-oculto"
+          ref={successRef}
+          style={{
+            backgroundImage: `url(${successBackground})`,
+          }}
+        >
+          <div className="success-content">
+            <img src={successIcon} alt="" />
+            <h1>Redefinição enviada!</h1>
+            <p>Boa, agora é só checar o e-mail que foi enviado para você
+redefinir sua senha e aproveitar os estudos.</p>
+            <Link to="/" className="success-button" title="Voltar ao login">Voltar ao login</Link>
+          </div>
+        </div>
+
         <div
           className="logo"
           style={{
