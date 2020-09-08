@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 import Login from './pages/Login';
 import Landing from './pages/Landing';
@@ -11,6 +11,7 @@ import ForgotPassword from './pages/ForgotPassword';
 const Routes: React.FC = () => {
   return <>
     <BrowserRouter>
+      <Redirect from='*' to='/' />
       <Route path="/" component={Login} exact />
       <Route path="/register" component={Register} />
       <Route path="/forgot-password" component={ForgotPassword} />
