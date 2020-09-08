@@ -11,7 +11,6 @@ import ForgotPassword from './pages/ForgotPassword';
 const Routes: React.FC = () => {
   return <>
     <BrowserRouter>
-      <Redirect from='*' to='/' />
       <Route path="/" component={Login} exact />
       <Route path="/register" component={Register} />
       <Route path="/forgot-password" component={ForgotPassword} />

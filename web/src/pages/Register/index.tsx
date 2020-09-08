@@ -54,10 +54,10 @@ const Register: React.FC = () => {
         >
           <div className="success-content">
             <img src={successIcon} alt="" />
-            <h1>Redefinição enviada!</h1>
-            <p>Boa, agora é só checar o e-mail que foi enviado para você
-redefinir sua senha e aproveitar os estudos.</p>
-            <Link to="/" className="success-button" title="Voltar ao login">Voltar ao login</Link>
+            <h1>Cadastro concluído</h1>
+            <p>Agora você faz parte da plataforma da Proffy.
+Tenha uma ótima experiência.</p>
+            <Link to="/" className="success-button" title="Fazer login">Fazer login</Link>
           </div>
         </div>
 

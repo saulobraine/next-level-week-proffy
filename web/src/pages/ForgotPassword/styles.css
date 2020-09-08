@@ -104,7 +104,7 @@
 }
 
 #page-forgot-password .success .success-content .success-button {
-  width: 100%;
+  width: 20rem;
   height: 5.6rem;
   margin-top: 6rem;
   background: var(--color-secondary);
@@ -112,7 +112,7 @@
   border: 0;
   border-radius: 0.8rem;
   font: 700 1.6rem 'Archivo';
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
