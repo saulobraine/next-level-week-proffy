@@ -145,7 +145,6 @@
   }
   #page-login .login .login-container {
     grid-area: login-form;
-    width: 50rem;
     max-width: 50rem;
     justify-self: center;
   }
@@ -202,11 +201,21 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    width: 50rem;
     max-width: 50rem;
   }
   #page-login .login .login-footer .login-footer-grid .register .register-link {
     color: var(--color-primary);
     font-weight: 600;
+  }
+}
+
+
+@media (min-width: 1700px) {
+  #page-login .login .login-container {
+    width: 50rem;
+  }
+
+  #page-login .login .login-footer .login-footer-grid {
+    width: 50rem;
   }
 }

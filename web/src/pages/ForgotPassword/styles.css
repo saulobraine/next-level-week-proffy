@@ -87,16 +87,13 @@
   opacity: 1;
 }
 
-#page-forgot-password .success-oculto {
+#page-forgot-password .success-hidden {
   opacity: 0;
   visibility: hidden;
   z-index: -1;
 }
 
 #page-forgot-password .success .success-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   text-align: center;
   color: var(--color-text-in-primary);
 }
@@ -145,8 +142,8 @@
     background-repeat: no-repeat;
     padding: 10rem;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     grid-area: logo;
   }
   #page-forgot-password .logo-container, #page-forgot-password .logo-container img {
@@ -156,16 +153,19 @@
     grid-area: forgot-password;
     position: relative;
     display: grid;
-    grid-template-rows: 15rem 1fr;
+    justify-content: center;
+    grid-template-rows: auto 1fr;
     grid-template-areas: "back-login" "forgot-password-form";
     padding: 5rem 10rem;
+
   }
   #page-forgot-password .forgot-password .back {
     grid-area: back-login;
   }
   #page-forgot-password .forgot-password .forgot-password-container {
     grid-area: forgot-password-form;
-    width: 50rem;
+    display: grid;
+    align-items: center;
     max-width: 100%;
   }
   #page-forgot-password .success {
@@ -186,11 +186,17 @@
   }
 
   #page-forgot-password .success .success-content {
-    display: block;
     max-width: 50rem;
   }
 
   #page-forgot-password .success .success-content h1 {
     margin-bottom: 1rem;
+  }
+}
+
+
+@media (min-width: 1700px) {
+  #page-forgot-password .forgot-password .forgot-password-container {
+    width: 50rem;
   }
 }

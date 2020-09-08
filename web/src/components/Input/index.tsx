@@ -32,20 +32,9 @@ const Input: React.FC<InputProps> = ({ label, name, type, ...rest }) => {
   return (
     <div ref={divInputRef} className="input-block">
       <label htmlFor={name}>{label}</label>
-      {type === 'password' && (
-        <button
-          type="button"
-          className="input-toggle-password"
-          onClick={handleShowPassword}
-        >
-          {!toggleShowPassword && <img src={openEye} alt="Ver senha" />}
-
-          {toggleShowPassword && <img src={closeEye} alt="Ocultar senha" />}
-        </button>
-      )}
       <input
         {...rest}
-        className={type === "password" ? "password" : "" }
+        className={type === "password" ? "password" : ""}
         type={type}
         id={name}
         ref={inputRef}
@@ -57,6 +46,18 @@ const Input: React.FC<InputProps> = ({ label, name, type, ...rest }) => {
           }
         }}
       />
+
+      {type === 'password' && (
+        <button
+          type="button"
+          className="input-toggle-password"
+          onClick={handleShowPassword}
+        >
+          {!toggleShowPassword && <img src={openEye} alt="Ver senha" />}
+
+          {toggleShowPassword && <img src={closeEye} alt="Ocultar senha" />}
+        </button>
+      )}
     </div>
   );
 };

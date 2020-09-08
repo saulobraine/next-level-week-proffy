@@ -78,24 +78,26 @@ redefinir sua senha e aproveitar os estudos.</p>
           </div>
 
           <div className="forgot-password-container">
-            <h1>Eita, esqueceu sua senha?</h1>
-            <p>Não esquenta, vamos dar um jeito nisso.</p>
-            <form onSubmit={handleForgotPasswordSubmit}>
+            <div className="forgot-password-container-content">
+              <h1>Eita, esqueceu sua senha?</h1>
+              <p>Não esquenta, vamos dar um jeito nisso.</p>
+              <form onSubmit={handleForgotPasswordSubmit}>
 
-              <Input
-                label="E-mail"
-                name="email"
-                type="email"
-                value={email}
-                autoComplete="email"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                required
-              />
+                <Input
+                  label="E-mail"
+                  name="email"
+                  type="email"
+                  value={email}
+                  autoComplete="email"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  required
+                />
 
-              <button type="submit" ref={buttonRef} disabled>Enviar</button>
-            </form>
+                <button type="submit" ref={buttonRef} disabled>Enviar</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
