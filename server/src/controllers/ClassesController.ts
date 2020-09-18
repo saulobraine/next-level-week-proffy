@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { QueryBuilder } from 'knex';
 import db from '../database/connection';
 import convertHourToMinutes from '../utils/convertHourToMinutes';
 
@@ -12,30 +13,32 @@ export default class ClassesController {
 
   async index(request: Request, response: Response) {
     const filters = request.query;
+    let timeInMinutes = 0;
 
-    if(!filters.subject || !filters.subject || !filters.time) {
-      return response.status(400).json({
-        error: 'Missing filters'
-      })
+    if (filters.time) {
+      timeInMinutes = convertHourToMinutes(filters.time as string);
     }
 
-    const timeInMinutes = convertHourToMinutes(filters.time as string);
-
     const classes = await db('classes')
-      .whereExists(function(){
+      .whereExists(function () {
         this.select('class_schedule.*')
           .from('class_schedule')
           .whereRaw('class_schedule.class_id = classes.id')
-          .whereRaw('class_schedule.week_day = ??', [Number(filters.week_day as string)])
-          .whereRaw('class_schedule.from <= ??', [timeInMinutes])
-          .whereRaw('class_schedule.to > ??', [timeInMinutes])
-        })
-      .where('classes.subject', '=', filters.subject as string)
+          .modify(QueryBuilder => {
+            (filters.week_day && QueryBuilder.whereRaw('class_schedule.week_day = ??', [Number(filters.week_day as string)]));
+
+            (filters.time && QueryBuilder.whereRaw('class_schedule.from <= ??', [timeInMinutes])
+              .whereRaw('class_schedule.to > ??', [timeInMinutes]))
+          });
+      })
+      .modify(QueryBuilder => {
+        (filters.subject && QueryBuilder.where('classes.subject', '=', filters.subject as string))
+      })
       .join('users', 'classes.user_id', '=', 'users.id')
       .select(['classes.*', 'users.*'])
-      
 
-    return response.json(classes);    
+
+    return response.json(classes);
   }
 
   async create(request: Request, response: Response) {
