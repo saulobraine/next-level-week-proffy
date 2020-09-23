@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { QueryBuilder } from 'knex';
 import db from '../database/connection';
 import convertHourToMinutes from '../utils/convertHourToMinutes';
 
@@ -10,6 +9,8 @@ interface ScheduleItem {
 }
 
 export default class ClassesController {
+
+
 
   async index(request: Request, response: Response) {
     const filters = request.query;
@@ -25,20 +26,43 @@ export default class ClassesController {
           .from('class_schedule')
           .whereRaw('class_schedule.class_id = classes.id')
           .modify(QueryBuilder => {
-            (filters.week_day && QueryBuilder.whereRaw('class_schedule.week_day = ??', [Number(filters.week_day as string)]));
+            ((filters.week_day && filters.week_day != 'allDays') && QueryBuilder.whereRaw('class_schedule.week_day = ??', [Number(filters.week_day as string)]));
 
-            (filters.time && QueryBuilder.whereRaw('class_schedule.from <= ??', [timeInMinutes])
-              .whereRaw('class_schedule.to > ??', [timeInMinutes]))
+            ((filters.time && filters.time != 'allTimes') && QueryBuilder
+              .whereRaw('class_schedule.from <= ??', [timeInMinutes])
+              .whereRaw('class_schedule.to > ??', [timeInMinutes])
+            )
           });
       })
       .modify(QueryBuilder => {
-        (filters.subject && QueryBuilder.where('classes.subject', '=', filters.subject as string))
+        ((filters.subject && filters.subject != 'allSubjects') && QueryBuilder.where('classes.subject', '=', filters.subject as string))
       })
       .join('users', 'classes.user_id', '=', 'users.id')
-      .select(['classes.*', 'users.*'])
+      .orderBy('users.name')
+      .select();
+
+    const UserSchedule = classes.map(async (classUser: any) => {
+
+      const class_schedule = await db('class_schedule')
+        .join('classes', function () {
+          this.on(function () {
+            this.on('classes.id', '=', 'class_schedule.class_id')
+            this.andOn('classes.user_id', '=', classUser.user_id)
+          })
+        })
+        .orderBy('class_schedule.week_day')
+        .select(['class_schedule.*']);
+
+      return {
+        ...classUser,
+        class_schedule
+      }
+    });
 
 
-    return response.json(classes);
+    Promise.all(UserSchedule).then(UserScheduleResponse => {
+      return response.json(UserScheduleResponse);
+    });
   }
 
   async create(request: Request, response: Response) {
