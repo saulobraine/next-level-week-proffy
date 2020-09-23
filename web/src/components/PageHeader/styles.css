@@ -4,13 +4,17 @@
   background: var(--color-primary);
 }
 
+.page-header .top-bar {
+  background-color: var(--color-primary-dark);
+}
+
 .page-header .top-bar-container {
   width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--color-text-primary);
+  color: var(--color-text-in-primary);
   padding: 1.6rem 0;
 }
 
@@ -23,7 +27,7 @@
   opacity: 0.6;
 }
 
-.page-header .top-bar-container > img {
+.page-header .top-bar-container>img {
   height: 1.6rem;
 }
 
@@ -33,13 +37,13 @@
   position: relative;
 }
 
-.page-header .header-content strong {
+.page-header .header-content .header-content-inner strong {
   font: 700 3.6rem 'Archivo';
   line-height: 4.2rem;
   color: var(--color-title-in-primary);
 }
 
-.page-header .header-content p {
+.page-header .header-content .header-content-inner p {
   max-width: 30rem;
   font-size: 1.6rem;
   line-height: 2.6rem;
@@ -47,29 +51,58 @@
   margin-top: 1.6rem;
 }
 
+.page-header .header-content .header-content-inner+.header-content-icon {
+  margin-top: 2.4rem;
+}
+
+.page-header .header-content .header-content-icon {
+  display: flex;
+  align-items: center;
+}
+
+.page-header .header-content .header-content-icon img {
+  margin-right: 1rem;
+}
+
+.page-header .header-content .header-content-icon p {
+  color: var(--color-text-in-primary);
+  font-size: 1.6rem;
+  line-height: 2rem;
+  max-width: 10rem;
+}
 
 @media (min-width: 700px) {
   .page-header {
-    height: 340px;
+    height: 32rem;
   }
-
   .page-header .top-bar-container {
     max-width: 1100px;
   }
-
   .page-header .header-content {
-    flex: 1;
     max-width: 740px;
-    margin: 0 auto;
-    padding-bottom: 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    flex: 1;
+    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header-inner header-icon" "children children";
   }
-
-  .page-header .header-content strong {
-    max-width: 350px;
+  .page-header .header-content .header-content-inner {
+    grid-area: header-inner;
   }
-
+  .page-header .header-content .header-content-inner+.header-content-icon {
+    margin: 0;
+  }
+  .page-header .header-content .header-content-icon {
+    grid-area: header-icon;
+    justify-content: flex-end;
+  }
+  .page-header .header-content .header-content-icon img {
+    margin-right: 1.5rem;
+  }
+  .page-header .header-content .header-content-icon p {
+    font-size: 1.2rem;
+  }
+  .page-header .header-content .header-children {
+    grid-area: children;
+  }
 }

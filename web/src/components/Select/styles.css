@@ -2,38 +2,94 @@
   position: relative;
 }
 
-.select-block+.select-block {
-  margin-top: 1.4rem;
-}
-
 .select-block label {
   font-size: 1.4rem;
 }
 
-.select-block select {
-  width: 100%;
-  height: 5.6rem;
-  margin-top: 0.8rem;
+.select-block .select-options {
+  list-style: none;
   border-radius: 0.8rem;
-  background: var(--color-input-background);
-  border: 1px solid var(--color-line-in-primary);
-  outline: 0;
-  padding: 0 1.6rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
 }
 
-.select-block::after {
-  width: calc(100% - 3.2rem);
-  height: 0px;
+.select-block .select-options input {
+  display: none;
+}
+
+.select-block .select-options label {
+  height: 5.6rem;
+  background: var(--color-input-background);
+  display: flex;
+  align-items: center;
+  padding: 0 2.4rem;
+  cursor: pointer;
+  transition: .2s ease-in;
+  position: relative;
+  color: var(--color-text-title) !important;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.select-block .select-options>label:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-label-in-primary) !important;
+}
+
+.select-block .select-options .animate-options {
+  max-height: 0;
+  transition: .3s all;
+}
+
+.select-block .select-options .animate-options label {
+  border-top: 1px solid var(--color-line-in-white);
+}
+
+.select-block .select-options.select-options-open .animate-options {
+  max-height: 600px;
+  transition: .3s all;
+}
+
+.select-block .select-options.select-options-open .animate-options label:not(.active-option):hover {
+  background: var(--color-label-hovered);
+  font-weight: bold;
+}
+
+.select-block .select-options.select-options-open .animate-options label:after {
+  width: 0;
+  height: 100%;
   content: "";
   background: var(--color-primary-light);
   position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
-  bottom: 0;
+  left: 0;
+  margin: auto 0;
   transition: .2s all;
 }
 
-.select-block:focus-within::after {
-  height: 3px;
+.select-block .select-options.select-options-open label:hover:after {
+  width: 5px;
   transition: .2s all;
+}
+
+.select-block .select-options .animate-options .active-option {
+  background: var(--color-primary-dark);
+  color: white !important;
+  font-weight: bold;
+}
+
+.select-block .select-options .animate-options .active-option:after {
+  width: 5px !important;
+  background: var(--color-primary-darker) !important;
+}
+
+@media (min-width: 700px) {
+  .select-block .select-options {
+    position: absolute;
+  }
+  .select-block .select-options .animate-options .active-option {
+    background: var(--color-primary);
+  }
 }

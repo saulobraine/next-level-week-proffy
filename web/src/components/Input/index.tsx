@@ -53,9 +53,8 @@ const Input: React.FC<InputProps> = ({ label, name, type, ...rest }) => {
           className="input-toggle-password"
           onClick={handleShowPassword}
         >
-          {!toggleShowPassword && <img src={openEye} alt="Ver senha" />}
+          {!toggleShowPassword ? <img src={openEye} alt="Ver senha" /> : <img src={closeEye} alt="Ocultar senha" />}
 
-          {toggleShowPassword && <img src={closeEye} alt="Ocultar senha" />}
         </button>
       )}
     </div>

@@ -34,10 +34,39 @@
   margin-top: 0.4rem;
 }
 
-.teacher-item > p {
+.teacher-item>p {
   padding: 0 2rem;
   font-size: 1.6rem;
   line-height: 2.8rem;
+}
+
+.teacher-item .teacher-schedules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.teacher-item .teacher-schedules .schedule {
+  padding: 1.6rem 2rem;
+  background: var(--color-box-footer);
+  border: 1px solid var(--color-line-in-white);
+  border-radius: 1rem;
+}
+
+.teacher-item .teacher-schedules .schedule span {
+  font-size: 1.2rem;
+  -moz-user-select: none
+}
+
+.teacher-item .teacher-schedules .schedule p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  -moz-user-select: none
+}
+
+.teacher-item .teacher-schedules .schedule p:first-of-type {
+  margin-bottom: 1rem;
 }
 
 .teacher-item footer {
@@ -47,17 +76,23 @@
   margin-top: 3.2rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+.teacher-item footer p {
+  text-align: center;
 }
 
 .teacher-item footer p strong {
   color: var(--color-primary);
   font-size: 2rem;
   display: block;
+  margin-bottom: 1rem;
 }
 
 .teacher-item footer a {
-  width: 20rem;
+  width: 100%;
   height: 5.6rem;
   background: var(--color-secondary);
   color: var(--color-button-text);
@@ -77,27 +112,29 @@
 }
 
 @media (min-width: 700px) {
-
-  .teacher-item header,
-  .teacher-item footer {
-      padding: 3.2rem
+  .teacher-item header, .teacher-item footer {
+    padding: 3.2rem
   }
-
-  .teacher-item > p {
+  .teacher-item>p {
     padding: 0 3.2rem;
   }
-
+  .teacher-item .teacher-schedules {
+    grid-template-columns: repeat(5, 1fr);
+    padding: 2rem 3.2rem 0;
+  }
+  .teacher-item footer {
+    flex-direction: unset;
+  }
   .teacher-item footer p strong {
     display: initial;
     margin-left: 1.6rem;
   }
-
-  .teacher-item footer button {
+  .teacher-item footer a {
     width: 24.5rem;
     font-size: 1.6rem;
     justify-content: center;
   }
-  .teacher-item footer button img {
+  .teacher-item footer a img {
     margin-right: 1.6rem;
   }
 }

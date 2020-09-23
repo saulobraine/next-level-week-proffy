@@ -21,6 +21,8 @@
   --color-button-disabled: #DCDCE5;
   --color-error: #ff0000;
   --color-error-dark: #b80f0a;
+  --color-label-in-primary: #C1BCCC;
+  --color-label-hovered: #EBEBF5;
 }
 
 * {
